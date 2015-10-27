@@ -44,6 +44,11 @@ user.getUsername();
 
 
 // Write the function definitions which will make the following function invocations function properly.
+function Car(type, model, year) {
+  this.type = type;
+  this.model = model;
+  this.year = year;
+}
 
   //Function Invocations Here
 
@@ -54,7 +59,15 @@ prius.moveCar(); //increments prius' move property by 10. Returns the new move p
 mustang.moveCar(); //increments mustang' move property by 10. Returns the new move property.
 
 //Hint, you'll need to write a moveCar function which is added to every object that is being returned from the Car function. You'll also need to use the 'this' keyword properly in order to make sure you're invoking moveCar on the write object (prius vs mustang).
+function moveCar() {
+  this.move + 10;
+  }
 
+prius.move = 10;
+mustang.move = 50;
+
+moveCar.call(prius);
+moveCar.call(mustang);
 
 
 //Continuation of previous problem
@@ -88,9 +101,13 @@ setTimeout(getUsername, 5000);
 //Above you're given an object, a function, and a setTimeout invocation. After 5 seconds, what will the getUsername function return?
 
   //Answer Here
+  undefined
 
 //In the example above, what is the 'this keyword' bound to when getUsername runs?
 
   //Answer Here
+  The global scope object, which is window.
 
 //Fix the setTimeout invocation so that the user object will be the focal object when getUsername is ran.
+var f = getUsername.bind(user);
+setTimeout(f, 5000);
