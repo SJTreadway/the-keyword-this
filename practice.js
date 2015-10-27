@@ -2,19 +2,25 @@
   // 1) What is the purpose of the 'this keyword'?
 
       //Answer
+      Allows the reuse of functions across multiple objects.
 
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
       //Answer
+      1. Implicit binding - 'this' is not bound to an object. So it is bound to the global scope and returns undefined.
+      2. Explicit binding - 'this' is bound to an object.
+      3. new Binding - 'this' is bound to itself inside a function linked to an object.
+      4. default binding - 'this' is stored in a variable so that it can be used in a different scope.
 
   // 3) What is the difference between call and apply?
 
       //Answer
+      Apply uses arrays as params. Call does not use arrays as params.
 
   // 4) What does .bind do?
 
       //Answer
-
+      It creates a method for an object.
 
 //Next Problem
 
@@ -43,7 +49,7 @@ mustang.moveCar(); //increments mustang' move property by 10. Returns the new mo
 
 //Hint, you'll need to write a moveCar function which is added to every object that is being returned from the Car function. You'll also need to use the 'this' keyword properly in order to make sure you're invoking moveCar on the write object (prius vs mustang).
 
-asdwd
+
 
 //Continuation of previous problem
 
