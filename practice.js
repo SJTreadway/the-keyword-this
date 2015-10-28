@@ -7,10 +7,25 @@
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
       //Answer
-      1. Implicit binding - 'this' is not bound to an object. So it is bound to the global scope and returns undefined.
-      2. Explicit binding - 'this' is bound to an object.
-      3. new Binding - 'this' is bound to itself inside a function linked to an object. Using 'new' keyword.
-      4. default binding - 'this' is stored in a variable so that it can be used in a different scope.
+      1) What is the purpose of the 'this keyword'?
+
+        It's a reference to the parent arguement.  It's value is determined by how it is called and "who" calls it.
+
+      2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
+
+          Implicit binding- left of the dot at Call time.   (me.sayName();  'me' is bound implicitly, you.sayName();  'you' is bound this time)
+          Explicit binding- uses .call, .apply, or .bind to bind 'this' to an obj and pass arguments
+          new binding- When a function is invoked with the 'new' keyword, the 'this' inside that function receives the value of new Object being created by the function  --> instantiation
+          default (window) binding- the window obj is what 'this' will default to if there is no object for this to bind to- produces error is strict mode.
+
+      3) What is the difference between call and apply?
+
+          .call = arguments must be explicitly and individually given
+          .apply = allows you to enter arguments as an array
+
+      4) What does .bind do?
+
+          returns a new, identical function where 'this' is bound to the first argument.  Does not call the function automatically
 
   // 3) What is the difference between call and apply?
 
