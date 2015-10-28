@@ -9,18 +9,18 @@
       //Answer
       1. Implicit binding - 'this' is not bound to an object. So it is bound to the global scope and returns undefined.
       2. Explicit binding - 'this' is bound to an object.
-      3. new Binding - 'this' is bound to itself inside a function linked to an object.
+      3. new Binding - 'this' is bound to itself inside a function linked to an object. Using 'new' keyword.
       4. default binding - 'this' is stored in a variable so that it can be used in a different scope.
 
   // 3) What is the difference between call and apply?
 
       //Answer
-      Apply uses arrays as params. Call does not use arrays as params.
+      Apply uses arrays as arguments. Call does not use arrays as arguments.
 
   // 4) What does .bind do?
 
       //Answer
-      It creates a method for an object.
+      returns an identical function that uses this to point at the bound object.
 
 //Next Problem
 
@@ -50,7 +50,8 @@ function Car(type, model, year){
   this.year = year;
   this.move = 0;
   this.moveCar = function(){
-    return this.move += 10;
+    this.move += 10;
+    return this.move;
   };
 }
 
